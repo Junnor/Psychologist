@@ -19,6 +19,7 @@ class HappinessViewController: UIViewController {
     var happiness: Int = 100 {  // happiness 0 = very sad and 100 = ecstatic
         didSet {
             happiness = min(max(happiness, 0), 100)
+            print("happiness = \(happiness)")
             updateUI()
         }
     }
