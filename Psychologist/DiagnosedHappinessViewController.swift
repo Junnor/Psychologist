@@ -9,6 +9,64 @@
 import UIKit
 
 class DiagnosedHappinessViewController: HappinessViewController {
+        
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print("new vc ")
+        print("-\(numberOfVC) diagnosed happiness view controller - init()")   // 初始化的小bug, 由于 sugue 前就已经初始化了
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        print("-\(numberOfVC) diagnosed happiness view controller - init(nibName)")
+    }
+    
+    deinit {
+        print("-\(numberOfVC) diagnosed happiness view controller - deinit()")
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("-\(numberOfVC) diagnosed happiness view controller - awakeFromNib()")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("-\(numberOfVC) diagnosed happiness view controller - viewDidLoad()")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("-\(numberOfVC) diagnosed happiness view controller - viewWillLayoutSubviews() ..frame = \(view.frame)")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("-\(numberOfVC) diagnosed happiness view controller - viewDidLayoutSubviews() ..frame = \(view.frame)")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("-\(numberOfVC) diagnosed happiness view controller - viewWillAppear()")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("-\(numberOfVC) diagnosed happiness view controller - viewDidAppear()")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("-\(numberOfVC) diagnosed happiness view controller - viewWillDisappear()")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("-\(numberOfVC) diagnosed happiness view controller - viewDidDisappear()")
+    }
+    
+
+    // ----------------------------------------------------------------------
     
     override var happiness: Int {
         didSet {

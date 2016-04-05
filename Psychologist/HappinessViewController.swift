@@ -10,6 +10,9 @@ import UIKit
 
 class HappinessViewController: UIViewController {
     
+    // for test the view controllr's lifecycle
+    var numberOfVC: Int = 0 
+        
     @IBOutlet weak var faceView: FaceView! {
         didSet {
             faceView.dataSource = self
